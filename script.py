@@ -14,6 +14,7 @@ class NumberToString(object):
         self.len_ = len(self.number)
         self.number = [n.replace(" ", "") for n in self.number]
         self.LN = LISTA_NUMEROS
+        self.NR = NUMEROS_RAROS
         self.len_group = ""
 
     def help(self, e=None):
@@ -45,7 +46,7 @@ class NumberToString(object):
             self.len_group = str(len(self.number[0]))
             for i, num in enumerate(self.number[0]):
                 if int(self.len_group) == 2 and \
-                   int("".join(self.number[0][i:])) in NUMEROS_RAROS:
+                   int("".join(self.number[0][i:])) in self.NR:
 
                     tmp = int("".join(self.number[0][i:]))
                     self.result += self.LN["1"][tmp - 1]
